@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hazard Reporting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Report a Hazard</h1>
+    <form method="POST" enctype="multipart/form-data">
+        Name: <input type="text" name="name" required><br>
+        Hazard: <textarea name="hazard" required></textarea><br>
+        Upload file (optional): <input type="file" name="file"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Dashboard</a>
+</body>
+</html>

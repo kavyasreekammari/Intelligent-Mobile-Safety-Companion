@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mine Safety Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>⛏ Mine Safety Dashboard</h1>
+
+<h3>Safety Prompts</h3>
+<ul>
+    {% for prompt in prompts %}
+    <li>{{ prompt }}</li>
+    {% endfor %}
+</ul>
+
+<div class="links">
+    <a href="{{ url_for('scan') }}">🛑 Scan Body</a>
+    <a href="{{ url_for('videos') }}">🎥 Safety Video</a>
+    <a href="{{ url_for('checklist') }}">📋 Daily Checklist</a>
+    <a href="{{ url_for('report') }}">⚠ Report Hazard</a>
+</div>
+
+</body>
+</html>

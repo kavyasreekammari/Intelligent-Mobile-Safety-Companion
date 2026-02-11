@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Checklist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Daily Safety Checklist</h1>
+
+    <form method="POST" class="checklist-form">
+
+        <div class="checklist-items">
+            {% for task in tasks %}
+            <label class="check-item">
+                <input type="checkbox" name="tasks" value="{{ task }}">
+                <span>{{ task }}</span>
+            </label>
+            {% endfor %}
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <a href="{{ url_for('home') }}">Back to Dashboard</a>
+
+</body>
+</html>
